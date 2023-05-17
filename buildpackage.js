@@ -30,7 +30,7 @@ const UglifyJS = require("uglify-js");
     }
 
     // Uglify JavaScript
-    console.log("# Minifying JS using the UglifyES API, replacing un-minified files.");
+    console.log("# Minifying JS using the UglifyJS API, replacing un-minified files.");
 
     const files = await new Promise((resolve, reject) => {
         glob("./bin/**/*.js", (err, files) => {
