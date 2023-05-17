@@ -8,7 +8,7 @@ const fsPromise = require("fs/promises");
 const glob = require("glob");
 const path = require("path");
 const rimraf = require("rimraf");
-const UglifyES = require("uglify-es");
+const UglifyJS = require("uglify-js");
 
 (async function() {
     // Clean bin directory
@@ -45,7 +45,7 @@ const UglifyES = require("uglify-es");
     for (const file of files) {
         fs.writeFileSync(
             file.replace(/\.js$/, ".min.js"),
-            UglifyES.minify(fs.readFileSync(file, "utf-8"), { compress: true, mangle: true }).code,
+            UglifyJS.minify(fs.readFileSync(file, "utf-8"), { compress: true, mangle: true }).code,
             "utf-8",
         );
     }
