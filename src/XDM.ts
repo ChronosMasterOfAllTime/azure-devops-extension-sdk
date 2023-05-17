@@ -288,7 +288,7 @@ export class XDMChannel implements IXDMChannel {
         try {
             // Call specified method.  Add nested success and error call backs with closure
             // so we can post back a response as a result or error as appropriate
-            var methodArgs = [];
+            var methodArgs: Array<any> = [];
             if (rpcMessage.params) {
                 methodArgs = <any[]>this._customDeserializeObject(rpcMessage.params, {});
             }
